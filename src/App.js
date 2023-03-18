@@ -1,25 +1,54 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import AddTask from './components/AddTask';
+import TaskContainer from './components/TaskContainer';
+import { v4 as uuidv4 } from 'uuid';
 
-function App() {
+
+const App =()=>{
+  const [tasks, setTasks] = useState([
+    {
+      id:1,
+      taskName:'this is first task',
+      status:'pending'
+    },
+    {
+      id:2,
+      taskName:'this is Second task',
+      status:'pending'
+    },
+    {
+      id:3,
+      taskName:'this is third task',
+      status:'pending'
+    },
+    {
+      id:4,
+      taskName:'this is fourth task',
+      status:'pending'
+    }
+  ]);
+
+  
+
+  const handleAddClick = (task) =>{
+    const id = uuidv4();
+    setTasks([...tasks,
+      {
+        id,
+        taskName:task, 
+        status:'pending'
+      }]);
+  }
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <AddTask handleClick={handleAddClick}/>
+      <TaskContainer tasksList={tasks}/>
     </div>
-  );
+  )
 }
 
 export default App;
