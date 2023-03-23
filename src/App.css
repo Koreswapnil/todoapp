@@ -18,6 +18,7 @@ code{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 20px;
 }
 
 .add-task{
@@ -25,7 +26,7 @@ code{
   height: 50px;
   background-color: #1a1a1a;
   border: 1px solid #fff;
-  margin: 100px 0px 50px;
+  margin: 60px 0px 20px 0px;
   display: flex;
   padding: 5px 20px;
   gap: 10px;
@@ -52,8 +53,9 @@ code{
 .task-wrapper{
   width: 80%;
   height: auto;
-  min-height: 100px;
+  min-height: 80px;
   border: 1px solid #fff;
+  gap: 50px;
 }
 
 .task{
@@ -67,4 +69,28 @@ code{
 .task p{
   flex:2;
   color: #fff;
+}
+
+.strike-through{
+  text-decoration: line-through;
+}
+
+.task-header{
+  background-color: bisque;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.task input{
+  flex: 2;
+  width: 100%;
+  color: #1a1a1a;
+  padding: 5px;
+}
+
+.task i{
+  padding: 5px;
 }
